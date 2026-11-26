@@ -6,7 +6,7 @@ const PROTOCOLS = [
     title: 'Furo Humanizado',
     subtitle: 'Personalize esta apresentação com o método, os materiais e as orientações adotados pela profissional.',
     highlight: 'Acolhimento e orientação',
-    image: 'assets/img/protocolos/furo-humanizado.svg'
+    image: 'assets/img/protocolos/Furo Humanizado.png'
   },
   {
     id: 'pele',

@@ -11,7 +11,7 @@ modelo-estetica/
 │   │   ├── Tratamento Facial em Clínica Elegante.png # Imagem horizontal do hero
 │   │   ├── doutora.png           # Retrato da profissional na seção de apresentação
 │   │   └── protocolos/           # Imagens dos procedimentos exibidos nos cards e na lightbox
-│   │       └── furo-humanizado.svg # Ilustração do destaque Furo Humanizado
+│   │       └── Furo Humanizado.png # Foto do destaque Furo Humanizado
 │   │       └── *.webp|*.jpg      # Thumbnails otimizadas e imagens em formato compatível
 │   └── icons/
 │       └── favicon.svg           # Favicon minimalista dourado/bordô
