@@ -14,7 +14,8 @@ Depois, acesse <http://localhost:8000>.
 
 ## Conteúdo
 
-- Página principal com protocolos, filtros, diagnóstico demonstrativo e perguntas frequentes.
+- Página principal com Furo Humanizado, Pele, HOF e Estética Facial, filtros interativos e perguntas frequentes.
+- Localização demonstrativa: Chapecó, SC.
 - Páginas de exemplo para [política de privacidade](./politica-privacidade.html) e [termos de uso](./termos-uso.html).
 - Imagens dos protocolos em `assets/img/protocolos/`.
 - Foto horizontal do banner em `assets/img/Tratamento Facial em Clínica Elegante.png`.

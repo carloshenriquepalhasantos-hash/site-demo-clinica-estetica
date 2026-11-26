@@ -11,6 +11,7 @@ modelo-estetica/
 │   │   ├── Tratamento Facial em Clínica Elegante.png # Imagem horizontal do hero
 │   │   ├── doutora.png           # Retrato da profissional na seção de apresentação
 │   │   └── protocolos/           # Imagens dos procedimentos exibidos nos cards e na lightbox
+│   │       └── furo-humanizado.svg # Ilustração do destaque Furo Humanizado
 │   │       └── *.webp|*.jpg      # Thumbnails otimizadas e imagens em formato compatível
 │   └── icons/
 │       └── favicon.svg           # Favicon minimalista dourado/bordô
@@ -22,7 +23,7 @@ modelo-estetica/
 └── js/
     ├── main.js                   # Inicialização global e integrações gerais da interface
     ├── protocols.js              # Fonte de dados dos protocolos e lógica de categoria/filtros
-    └── diagnosis-quiz.js         # Questionário de diagnóstico e recomendação de protocolo
+    └── diagnosis-quiz.js         # Seleção interativa das áreas de interesse
 
 ## Páginas
 
@@ -36,7 +37,7 @@ Página demonstrativa de uma clínica fictícia. Concentra as principais seçõe
 - Seção de protocolos com filtros por categoria;
 - Modal/lightbox para detalhes dos tratamentos;
 - Seção institucional “Sobre”;
-- Quiz rápido de orientação;
+- Seletor interativo de áreas: Furo Humanizado, Pele, HOF e Estética Facial;
 - Perguntas frequentes;
 - Links internos de contato demonstrativos, sem integração externa;
 - Rodapé e links legais.
@@ -107,7 +108,7 @@ Define os elementos reutilizáveis e seus estados:
 - Modal/lightbox;
 - Avisos e CTAs demonstrativos;
 - Estados ativos, desativados, hover e foco;
-- Feedback visual de mensagens e diagnóstico.
+- Feedback visual de mensagens e seleção de interesse.
 
 ## Camada de comportamento — js/
 
@@ -141,15 +142,13 @@ Este módulo deve ser a única fonte de dados dos protocolos exibidos em index.h
 
 ### js/diagnosis-quiz.js
 
-Responsável pelo fluxo de orientação rápida:
+Responsável pela seleção interativa das áreas de interesse:
 
 - Definição das perguntas e opções;
 - Captura das respostas;
-- Validação dos passos obrigatórios;
-- Registro da seleção entre as etapas;
-- Determinação do protocolo ou orientação recomendada;
-- Exibição do resultado no quiz;
-- Exibição de uma sugestão de protocolo e encaminhamento para o contato ilustrativo.
+- Registro da área selecionada;
+- Exibição da apresentação ilustrativa correspondente;
+- Encaminhamento para a seção de contato demonstrativa.
 
 ## Fluxos principais
 
@@ -163,9 +162,9 @@ Em dispositivos móveis, o menu utiliza o estado aberto/fechado controlado por m
 
 Usuário → aba de categoria → protocolos.js filtra os dados → cards são renderizados/atualizados → usuário abre detalhes na modal/lightbox.
 
-### Diagnóstico rápido
+### Seleção de interesse
 
-Usuário → responde ao quiz → diagnosis-quiz.js exibe uma sugestão ilustrativa → link leva à seção de contato demonstrativa.
+Usuário → seleciona uma das quatro áreas → diagnosis-quiz.js exibe uma apresentação ilustrativa → link leva à seção de contato demonstrativa.
 
 ### Contato demonstrativo
 

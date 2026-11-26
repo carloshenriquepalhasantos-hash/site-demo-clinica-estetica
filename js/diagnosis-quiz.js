@@ -1,45 +1,31 @@
 const DIAGNOSIS_OPTIONS = [
   {
-    id: 'firmeza',
-    label: 'Sinto o rosto menos firme e com perda de contorno',
-    protocol: 'Bioestimulador de Colágeno + Lifting Facial / Ultrassom',
+    id: 'furo',
+    label: 'Furo Humanizado',
+    protocol: 'Furo Humanizado',
     description:
-      'Para quem nota perda de firmeza e deseja estimular o próprio colágeno e reposicionar os tecidos sem cirurgia.'
+      'Conheça a apresentação demonstrativa do serviço. Personalize com o método e as orientações reais da profissional.'
   },
   {
-    id: 'labios-contorno',
-    label: 'Quero realçar lábios, queixo ou perfil nasal com naturalidade',
-    protocol: 'Preenchimento Labial, Queixo ou Rinomodelação',
+    id: 'pele',
+    label: 'Pele',
+    protocol: 'Cuidados com a Pele',
     description:
-      'Planejamento anatômico focado nos pequenos detalhes para equilibrar o perfil e valorizar a identidade de cada pessoa.'
+      'Use este espaço para apresentar cuidados e tratamentos faciais realmente oferecidos.'
   },
   {
-    id: 'renovacao-pele',
-    label: 'Quero renovar a textura, poros e preparar a pele',
-    protocol: 'Protocolo Skin Reset & Laser de CO₂',
+    id: 'hof',
+    label: 'HOF',
+    protocol: 'Harmonização Orofacial (HOF)',
     description:
-      'Indicado para revitalização profunda, estímulo de viço e preparação antecipada da pele para eventos especiais.'
+      'Destaque as técnicas de Harmonização Orofacial realizadas pela profissional e as informações confirmadas.'
   },
   {
-    id: 'rugas-prevencao',
-    label: 'Quero suavizar linhas de expressão e prevenir rugas',
-    protocol: 'Toxina Botulínica (Botox Preventivo ou Corretivo)',
+    id: 'estetica-facial',
+    label: 'Estética Facial',
+    protocol: 'Estética Facial',
     description:
-      'Suavização estratégica das marcas dinâmicas mantendo o olhar leve, descansado e natural.'
-  },
-  {
-    id: 'corporal-intima',
-    label: 'Busco tratamentos corporais, glúteos ou harmonização íntima',
-    protocol: 'Protocolo Glúteos, Depilação a Laser ou Harmonização Íntima',
-    description:
-      'Atendimento personalizado e discreto com tecnologias avançadas para firmeza, bem-estar e autoestima.'
-  },
-  {
-    id: 'masculino-capilar',
-    label: 'Procuro harmonização masculina, barba ou tratamento capilar',
-    protocol: 'Harmonização Masculina, Laser na Barba ou Protocolo Capilar',
-    description:
-      'Definição estrutural discreta sem artificialidade e cuidados direcionados para calvície ou região da barba.'
+      'Apresente os cuidados de estética facial que fazem parte da atuação da profissional.'
   }
 ];
 
@@ -72,11 +58,11 @@ function initDiagnosisQuiz() {
 
     resultContainer.hidden = false;
     resultContainer.innerHTML = `
-      <span class="eyebrow">Indicação Inicial</span>
+      <span class="eyebrow">Área selecionada</span>
       <h3>${selected.protocol}</h3>
       <p>${selected.description}</p>
       <p style="font-size: 0.8rem; margin-top: 0.5rem;">
-        *A indicação definitiva depende de avaliação individual feita por profissional habilitado.
+        *Este conteúdo é demonstrativo e não substitui avaliação profissional.
       </p>
       <a href="#contato" class="btn btn-primary">
         Ver exemplo de agendamento
