@@ -1,0 +1,202 @@
+# Arquitetura do Projeto — Aurora Estética (modelo demonstrativo)
+
+## Visão geral
+
+modelo-estetica/
+├── index.html                    # Landing page pública e ponto de entrada da experiência
+├── politica-privacidade.html     # Página informativa sobre privacidade e tratamento de dados (LGPD)
+├── termos-uso.html               # Página informativa com condições de uso e informações clínicas
+├── assets/
+│   ├── img/
+│   │   ├── Tratamento Facial em Clínica Elegante.png # Imagem horizontal do hero
+│   │   ├── doutora.png           # Retrato da profissional na seção de apresentação
+│   │   └── protocolos/           # Imagens dos procedimentos exibidos nos cards e na lightbox
+│   │       └── *.webp|*.jpg      # Thumbnails otimizadas e imagens em formato compatível
+│   └── icons/
+│       └── favicon.svg           # Favicon minimalista dourado/bordô
+├── css/
+│   ├── tokens.css                # Design tokens: cores, fontes, espaçamentos, raios e sombras
+│   ├── base.css                  # Reset, tipografia fluida e estilos globais reutilizáveis
+│   ├── sections.css              # Layout e composição das seções da página
+│   └── components.css            # Elementos reutilizáveis: cards, botões, filtros, modal e WhatsApp
+└── js/
+    ├── main.js                   # Inicialização global e integrações gerais da interface
+    ├── protocols.js              # Fonte de dados dos protocolos e lógica de categoria/filtros
+    └── diagnosis-quiz.js         # Questionário de diagnóstico e recomendação de protocolo
+
+## Páginas
+
+### index.html
+
+Página demonstrativa de uma clínica fictícia. Concentra as principais seções de um site do nicho:
+
+- Cabeçalho e navegação responsiva;
+- Hero com apresentação da clínica e CTA demonstrativo;
+- Faixa de destaques e diferenciais;
+- Seção de protocolos com filtros por categoria;
+- Modal/lightbox para detalhes dos tratamentos;
+- Seção institucional “Sobre”;
+- Quiz rápido de orientação;
+- Perguntas frequentes;
+- Links internos de contato demonstrativos, sem integração externa;
+- Rodapé e links legais.
+
+Deve carregar os arquivos CSS na seguinte ordem lógica:
+
+1. css/tokens.css — variáveis visuais;
+2. css/base.css — fundação da página;
+3. css/sections.css — estrutura das seções;
+4. css/components.css — componentes interativos.
+
+Os scripts devem ser carregados após o DOM estar disponível, com main.js, protocols.js e diagnosis-quiz.js executados na fase de inicialização da página.
+
+### politica-privacidade.html
+
+Página independente dedicada às práticas de privacidade e aos direitos previstos na LGPD. Os links legais de index.html e dos CTAs devem apontar para esta página.
+
+### termos-uso.html
+
+Página independente com termos de uso, limitações da landing page e informações clínicas ou avisos relevantes. Os links do rodapé devem apontar para esta página.
+
+## Camada visual — css/
+
+### css/tokens.css
+
+Centraliza os valores compartilhados do design system:
+
+- Paleta de cores dourada, bordô e neutras;
+- Famílias e pesos tipográficos;
+- Escala de espaçamentos;
+- Raios de borda;
+- Sombras;
+- Transições e durações;
+- Breakpoints ou dimensões reutilizáveis, quando aplicável.
+
+### css/base.css
+
+Define a base compartilhada do site:
+
+- Reset e normalização;
+- Box sizing;
+- Tipografia fluida;
+- Cores e backgrounds globais;
+- Estilos padrão de links, títulos e textos;
+- Utilitários comuns;
+- Estados visuais gerais e acessibilidade básica.
+
+### css/sections.css
+
+Define a arquitetura visual das áreas da página:
+
+- Header e menu mobile;
+- Hero;
+- Faixa de destaques;
+- Protocolos;
+- Sobre;
+- Quiz;
+- FAQ;
+- Rodapé.
+
+### css/components.css
+
+Define os elementos reutilizáveis e seus estados:
+
+- Botões primários e secundários;
+- Abas e botões de filtro;
+- Cards de protocolo;
+- Modal/lightbox;
+- Avisos e CTAs demonstrativos;
+- Estados ativos, desativados, hover e foco;
+- Feedback visual de mensagens e diagnóstico.
+
+## Camada de comportamento — js/
+
+### js/main.js
+
+Responsável pelo comportamento global da interface:
+
+- Inicialização dos elementos da página;
+- Controle do menu mobile;
+- Navegação por âncoras e scroll suave;
+- Revelação progressiva de elementos;
+- Leitura e preservação de parâmetros UTM;
+- Navegação para a seção de contato ilustrativa;
+- Observação de mudanças necessárias nos componentes da página;
+- Composição das integrações compartilhadas entre os módulos.
+
+### js/protocols.js
+
+Responsável pelo catálogo de tratamentos:
+
+- Dados dos procedimentos utilizados pela interface;
+- Nome, categoria, descrição e imagem de cada protocolo;
+- Texto ou conteúdo exibido na modal/lightbox;
+- Lista das categorias disponíveis;
+- Renderização dos cards;
+- Filtro por categoria;
+- Atualização do estado ativo das abas;
+- Tratamento de categorias vazias ou sem conteúdo.
+
+Este módulo deve ser a única fonte de dados dos protocolos exibidos em index.html.
+
+### js/diagnosis-quiz.js
+
+Responsável pelo fluxo de orientação rápida:
+
+- Definição das perguntas e opções;
+- Captura das respostas;
+- Validação dos passos obrigatórios;
+- Registro da seleção entre as etapas;
+- Determinação do protocolo ou orientação recomendada;
+- Exibição do resultado no quiz;
+- Exibição de uma sugestão de protocolo e encaminhamento para o contato ilustrativo.
+
+## Fluxos principais
+
+### Navegação
+
+Usuário → index.html → menu/âncoras → seção correspondente.
+
+Em dispositivos móveis, o menu utiliza o estado aberto/fechado controlado por main.js e respeita o overlay visual definido em components.css.
+
+### Consulta de protocolos
+
+Usuário → aba de categoria → protocolos.js filtra os dados → cards são renderizados/atualizados → usuário abre detalhes na modal/lightbox.
+
+### Diagnóstico rápido
+
+Usuário → responde ao quiz → diagnosis-quiz.js exibe uma sugestão ilustrativa → link leva à seção de contato demonstrativa.
+
+### Contato demonstrativo
+
+Os CTAs levam à seção de contato, que explica que os canais precisam ser configurados antes da publicação.
+
+## Assets
+
+- Tratamento Facial em Clínica Elegante.png: foto horizontal usada no hero;
+- doutora.png: retrato usado na apresentação da profissional;
+- favicon.svg: identificação visual da clínica na barra do navegador;
+- assets/img/protocolos/: mídia dos procedimentos, preferencialmente em WebP com fallback JPG.
+
+## Diretrizes de manutenção
+
+- Alterações visuais globais devem começar pelos tokens em css/tokens.css;
+- Estrutura e espaçamento das seções devem ser ajustados em css/sections.css;
+- Componentes compartilhados devem ser ajustados em css/components.css;
+- Dados e cards de tratamentos devem ser mantidos em js/protocols.js;
+- Perguntas e resultado do diagnóstico devem ser mantidos em js/diagnosis-quiz.js;
+- Interações gerais da página devem ficar centralizadas em js/main.js;
+- Alterações de conteúdo institucional devem ser feitas diretamente nas páginas HTML;
+- Imagens novas devem seguir os formatos e diretórios já definidos;
+- Recursos devem preservar responsividade, acessibilidade, legibilidade e consistência visual.
+
+## Integridade da arquitetura
+
+A navegação e os CTAs da página devem manter coerência com:
+
+- Link de política de privacidade para politica-privacidade.html;
+- Link de termos de uso para termos-uso.html;
+- Dados de protocolos provenientes de js/protocols.js;
+- Estado do menu controlado por main.js;
+- CTAs demonstrativos sem links para contatos reais;
+- Conteúdo clínico apresentado sem prometer garantia ou resultado absoluto.

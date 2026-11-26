@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#3A0D27" />
+  <title>Aurora Estética | Modelo demonstrativo</title>
+  <meta name="description" content="Modelo demonstrativo de site para clínica de estética, com tratamentos, apresentação profissional e contato personalizáveis." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* =====================================================================
+       CABEÇALHO EFEITO VIDRO (GLASSMORPHISM) MOSTRANDO A PÁGINA POR BAIXO
+       ===================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 120;
+      background: linear-gradient(
+        180deg,
+        rgba(250, 247, 245, 0.56) 0%,
+        rgba(250, 247, 245, 0.36) 100%
+      );
+      backdrop-filter: blur(14px) saturate(150%);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.65),
+        0 6px 24px rgba(58, 13, 39, 0.05);
+      transition:
+        background 0.3s ease,
+        backdrop-filter 0.3s ease,
+        -webkit-backdrop-filter 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .site-header.is-scrolled {
+      background: linear-gradient(
+        180deg,
+        rgba(250, 247, 245, 0.78) 0%,
+        rgba(250, 247, 245, 0.64) 100%
+      );
+      backdrop-filter: blur(18px) saturate(165%);
+      -webkit-backdrop-filter: blur(18px) saturate(165%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 8px 28px rgba(58, 13, 39, 0.08);
+    }
+
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .site-header {
+        background: rgba(250, 247, 245, 0.88);
+      }
+      .site-header.is-scrolled {
+        background: rgba(250, 247, 245, 0.95);
+      }
+    }
+
+    .hero {
+      padding-top: calc(clamp(3rem, 6vw, 5rem) + 76px);
+    }
+
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand">
+        <span class="brand-name">Aurora</span>
+        <span class="brand-sub">Estética Avançada</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#protocolos">Protocolos</a>
+        <a href="#profissional">A profissional</a>
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#duvidas">Dúvidas</a>
+      </nav>
+
+      <a href="#contato" class="btn btn-gold">
+        Ver exemplo de contato
+      </a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- HERO -->
+    <section class="hero">
+      <img
+        class="hero-background"
+        src="assets/img/Tratamento%20Facial%20em%20Cl%C3%ADnica%20Elegante.png"
+        alt="Profissional realizando um tratamento facial em uma clínica de estética"
+        fetchpriority="high"
+      />
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="demo-badge">Site demonstrativo · marca e contatos fictícios</span>
+          <span class="eyebrow">Cuidado personalizado, com ciência e naturalidade</span>
+          <h1 id="hero-headline">
+            Sua beleza
+            <em>em evidência com ciência e naturalidade.</em>
+          </h1>
+          <p class="hero-lead">
+            Protocolos personalizados em harmonização facial, bioestimuladores de colágeno, tecnologias a laser, tratamentos corporais e harmonização íntima.
+          </p>
+          <div class="hero-actions">
+            <a href="#contato" class="btn btn-primary">
+              Ver exemplo de agendamento
+            </a>
+            <a href="#protocolos" class="btn btn-outline">Conhecer protocolos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAIXA DE ESPECIALIDADES -->
+    <section class="highlights-strip" aria-label="Destaques da clínica demonstrativa">
+      <div class="container strip-list">
+        <span>Lábios</span>
+        <span>Full Face</span>
+        <span>Bioestimulador</span>
+        <span>Rinomodelação</span>
+        <span>Lifting sem Cirurgia</span>
+        <span>Ultrassom</span>
+        <span>Laser CO₂</span>
+        <span>Glúteos</span>
+        <span>Harmonização Íntima</span>
+      </div>
+    </section>
+
+    <!-- PROTOCOLOS -->
+    <section id="protocolos" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Protocolos Exclusivos</span>
+          <h2>A autoestima mora nos detalhes</h2>
+          <p>Selecione uma área de interesse para conhecer exemplos de tratamentos e recursos disponíveis neste modelo.</p>
+        </div>
+
+        <div class="filter-tabs" role="tablist">
+          <button class="tab-btn active" data-filter="all">Todos</button>
+          <button class="tab-btn" data-filter="facial">Facial &amp; Contorno</button>
+          <button class="tab-btn" data-filter="colageno">Colágeno &amp; Laser</button>
+          <button class="tab-btn" data-filter="corporal">Corporal &amp; Íntima</button>
+          <button class="tab-btn" data-filter="masculino">Masculino &amp; Capilar</button>
+        </div>
+
+        <div id="protocols-grid" class="protocols-grid"></div>
+      </div>
+    </section>
+
+    <!-- APRESENTAÇÃO DA PROFISSIONAL -->
+    <section id="profissional" class="section section-alt">
+      <div class="container doctor-grid">
+        <div class="doctor-card-visual">
+          <img src="assets/img/doutora.png" alt="Profissional de estética em imagem demonstrativa" loading="lazy" />
+        </div>
+        <div class="doctor-copy">
+          <span class="eyebrow">Planejamento Individualizado</span>
+          <h2>Uma profissional que inspira confiança</h2>
+          <p>
+            Apresente aqui a trajetória, as qualificações e a abordagem da profissional responsável pela clínica. Este texto é ilustrativo e deve ser substituído por informações verificadas antes da publicação.
+          </p>
+          <ul class="check-list">
+            <li>Apresente os tratamentos e as tecnologias realmente disponíveis</li>
+            <li>Inclua qualificações e especializações verificadas</li>
+            <li>Descreva a abordagem e a experiência oferecida pela clínica</li>
+          </ul>
+          <a href="#contato" class="btn btn-primary">
+            Ver exemplo de contato
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAGNÓSTICO INTERATIVO -->
+    <section id="diagnostico" class="section">
+      <div class="container">
+        <div class="quiz-box">
+          <span class="eyebrow">Orientação Inicial</span>
+          <h2>Qual é o principal objetivo da sua pele hoje?</h2>
+          <p>Escolha uma opção para ver uma sugestão inicial de protocolo. Este diagnóstico é apenas demonstrativo.</p>
+          <div id="quiz-options" class="quiz-options"></div>
+          <div id="quiz-result" class="quiz-result" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="duvidas" class="section section-alt">
+      <div class="container faq-wrap">
+        <div class="section-header">
+          <span class="eyebrow">Dúvidas Frequentes</span>
+          <h2>Transparência antes de cada etapa</h2>
+        </div>
+
+        <details class="faq-item" open>
+          <summary>A harmonização facial deixa o rosto artificial?</summary>
+          <p>Não. A proposta deste exemplo é respeitar os traços naturais e valorizar a harmonia de cada pessoa. A indicação real depende de avaliação profissional.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Vocês atendem o público masculino?</summary>
+          <p>Sim. Realizamos harmonização facial masculina com foco em estrutura e discrição, além de tratamentos capilares para calvície e Laser de CO₂ na região da barba.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Quando devo iniciar o preparo da pele para eventos ou festas?</summary>
+          <p>O ideal é iniciar com antecedência através de protocolos como o Skin Reset e bioestimuladores, dando tempo para o colágeno responder e a pele atingir o máximo viço.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong class="brand-name">Aurora Estética Avançada</strong>
+        <p>Modelo demonstrativo para clínicas de estética</p>
+      </div>
+      <div class="footer-contact" id="contato">
+        <strong>Agendamento ilustrativo</strong>
+        <p>Este modelo não possui telefone, endereço ou redes sociais reais. Os canais da clínica devem ser configurados antes da publicação.</p>
+      </div>
+      <div class="footer-links">
+        <a href="politica-privacidade.html">Privacidade</a>
+        <a href="termos-uso.html">Termos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/protocols.js"></script>
+  <script src="js/diagnosis-quiz.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    /* =====================================================================
+       CONTROLE DO CABEÇALHO EM VIDRO AO ROLAR A PÁGINA
+       ===================================================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+      const header = document.querySelector(".site-header");
+      const atualizarHeader = () => {
+        if (!header) return;
+        header.classList.toggle("is-scrolled", window.scrollY > 36);
+      };
+      atualizarHeader();
+      window.addEventListener("scroll", atualizarHeader, { passive: true });
+    });
+
+  </script>
+</body>
+</html>

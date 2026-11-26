@@ -1,0 +1,45 @@
+:root {
+  /* Paleta visual do modelo demonstrativo */
+  --color-bordo-900: #3A0D27;
+  --color-bordo-800: #4F1436;
+  --color-bordo-700: #681D48;
+  --color-bordo-100: #F4E8EE;
+
+  --color-gold-600: #A98657;
+  --color-gold-500: #C8A97E;
+  --color-gold-300: #E5D3B8;
+
+  --color-cream-50: #FAF7F5;
+  --color-cream-100: #F2ECE7;
+  --color-nude-200: #EADCD5;
+  --color-surface: #FFFFFF;
+
+  --color-text-primary: #24161D;
+  --color-text-secondary: #5E4B54;
+  --color-text-light: #FAF7F5;
+
+  /* Tipografia */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Escala Fluida */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: clamp(1.35rem, 2vw, 1.75rem);
+  --text-2xl: clamp(1.85rem, 3.2vw, 2.75rem);
+  --text-hero: clamp(2.4rem, 4.8vw, 4.1rem);
+
+  /* Espaçamento e Bordas */
+  --container-max: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-soft: 0 12px 32px -8px rgba(58, 13, 39, 0.08);
+  --shadow-card: 0 18px 40px -12px rgba(58, 13, 39, 0.14);
+  --transition: 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
